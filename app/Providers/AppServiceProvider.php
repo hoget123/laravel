@@ -3,7 +3,10 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+// mysql error 防止
 use Illuminate\Support\Facades\Schema;
+// FOR component alert sample
+use Illuminate\Support\Facades\Blade;
 class AppServiceProvider extends ServiceProvider
 {
     /**
@@ -13,7 +16,11 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        // mysql error 防止
         Schema::defaultStringLength(191);
+
+        // component alert sample
+        Blade::component('components.alert', 'alert');
     }
 
     /**

@@ -11,9 +11,12 @@
 |
 */
 
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 Route::get('/', function () {
-    return view('welcome');
-});
+        return view('index');
+    });
 
 Auth::routes();
 
@@ -25,3 +28,8 @@ Route::prefix('admin')->group(function() {
     Route::get('/', 'AdminController@index')->name('admin.dashboard');
   });
 //ここまで
+
+//Route::get('blade', function () {
+Route::get('child', function () {
+    return view('child');
+});
